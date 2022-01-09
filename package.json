@@ -28,14 +28,14 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^16.2.2",
-    "budo": "^11.2.0",
-    "standard": "^11.0.1",
+    "budo": "^2.0.1",
+    "standard": "^16.0.4",
     "uglify-js": "^3.3.24"
   },
   "dependencies": {
     "browserify-shim": "^3.8.14",
     "css-img-datauri-stream": "^0.1.5",
-    "cssify": "^1.0.3",
+    "cssify": "^0.8.0",
     "leaflet": ">=0.7.7 <2.0.0"
   },
   "repository": {
