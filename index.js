@@ -24,6 +24,9 @@ function getRangeEvent (rangeInput) {
 }
 
 function cancelMapDrag () {
+  if(this.__enter != null)
+    return;
+  this.__enter=true;
   mapWasDragEnabled = this._map.dragging.enabled()
   mapWasTapEnabled = this._map.tap && this._map.tap.enabled()
   this._map.dragging.disable()
@@ -31,6 +34,7 @@ function cancelMapDrag () {
 }
 
 function uncancelMapDrag (e) {
+  this.__enter=null;
   this._refocusOnMap(e)
   if (mapWasDragEnabled) {
     this._map.dragging.enable()

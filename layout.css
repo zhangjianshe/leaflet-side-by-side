@@ -11,7 +11,7 @@
     left: 50%;
     margin-left: -2px;
     width: 4px;
-    background-color: #fff;
+    background-color: #f0f0f0;
     pointer-events: none;
     z-index: 999;
 }

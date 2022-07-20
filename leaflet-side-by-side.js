@@ -26,6 +26,9 @@ function getRangeEvent (rangeInput) {
 }
 
 function cancelMapDrag () {
+  if(this.__enter != null)
+    return;
+  this.__enter=true;
   mapWasDragEnabled = this._map.dragging.enabled()
   mapWasTapEnabled = this._map.tap && this._map.tap.enabled()
   this._map.dragging.disable()
@@ -33,6 +36,7 @@ function cancelMapDrag () {
 }
 
 function uncancelMapDrag (e) {
+  this.__enter=null;
   this._refocusOnMap(e)
   if (mapWasDragEnabled) {
     this._map.dragging.enable()
@@ -201,7 +205,7 @@ module.exports = L.Control.SideBySide
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./layout.css":2,"./range.css":4}],2:[function(require,module,exports){
-var css = ".leaflet-sbs-range {\r\n    position: absolute;\r\n    top: 50%;\r\n    width: 100%;\r\n    z-index: 999;\r\n}\r\n.leaflet-sbs-divider {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 50%;\r\n    margin-left: -2px;\r\n    width: 4px;\r\n    background-color: #fff;\r\n    pointer-events: none;\r\n    z-index: 999;\r\n}\r\n"; (require("./node_modules\\cssify"))(css, undefined, 'D:\dev\leaflet-side-by-side\layout.css'); module.exports = css;
+var css = ".leaflet-sbs-range {\r\n    position: absolute;\r\n    top: 50%;\r\n    width: 100%;\r\n    z-index: 999;\r\n}\r\n.leaflet-sbs-divider {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 50%;\r\n    margin-left: -2px;\r\n    width: 4px;\r\n    background-color: #f0f0f0;\r\n    pointer-events: none;\r\n    z-index: 999;\r\n}\r\n"; (require("./node_modules\\cssify"))(css, undefined, 'D:\dev\leaflet-side-by-side\layout.css'); module.exports = css;
 },{"./node_modules\\cssify":3}],3:[function(require,module,exports){
 function injectStyleTag(document, fileName, cb) {
   var style = document.getElementById(fileName);
